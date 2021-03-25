@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     # Steps require - checkout code, run CxFlow Action, Upload SARIF report (optional)
     steps:
+    - env: 
+        cx_sast_version: '9.0'
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - name: Checkmarx CxFlow Action
@@ -42,4 +44,7 @@ jobs:
         incremental: false
         scanners: sast
         bug_tracker: GitHub
-        params: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}
+        params: --namespace=${{ github.repository_owner }} 
+                --repo-name=${{ github.event.repository.name }} 
+                 --branch=${{ github.ref }}
+                 --checkmarx.version=$cx_sast_version
