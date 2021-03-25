@@ -47,5 +47,5 @@ jobs:
                  --branch=${{ github.ref }}
                  --checkmarx.scan-preset='Checkmarx Express'
                  --cxflow.filter-category=$filter_categories
-env:
-   filter_categories: 'SQL_Injection'
+    env:
+     filter_categories: 'SQL_Injection'
