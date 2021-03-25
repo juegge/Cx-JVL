@@ -47,4 +47,4 @@ jobs:
         params: --namespace=${{ github.repository_owner }} 
                 --repo-name=${{ github.event.repository.name }} 
                  --branch=${{ github.ref }}
-                 --checkmarx.version=$cx_sast_version
+                 --checkmarx.version={{ $cx_sast_version }}
