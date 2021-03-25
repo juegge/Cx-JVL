@@ -22,7 +22,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel - this job is specifically configured to use the Checkmarx CxFlow Action
 jobs:
   # This workflow contains a single job called "cx -scan"
-  cx_scan:
+ cx_scan:
     # The type of runner that the job will run on - Ubuntu is required as Docker is leveraged for the action
     runs-on: ubuntu-latest
     # Steps require - checkout code, run CxFlow Action, push issues to github
@@ -46,5 +46,5 @@ jobs:
                 --repo-name=${{ github.event.repository.name }} 
                  --branch=${{ github.ref }}
                  --checkmarx.version=${{ cx_sast_version }}
-    env: 
+env: 
       cx_sast_version: 9.0
