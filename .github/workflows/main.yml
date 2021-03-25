@@ -45,3 +45,7 @@ jobs:
         params: --namespace=${{ github.repository_owner }} 
                 --repo-name=${{ github.event.repository.name }} 
                  --branch=${{ github.ref }}
+                 --checkmarx.scan-preset='Checkmarx Express'
+                 --cxflow.filter-category=$filter_categories
+env:
+   filter_categories: 'SQL_Injection'
