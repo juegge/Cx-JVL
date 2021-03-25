@@ -25,8 +25,6 @@ jobs:
   cx_scan:
     # The type of runner that the job will run on - Ubuntu is required as Docker is leveraged for the action
     runs-on: ubuntu-latest
-    env: 
-      cx_sast_version: '9.0'
     # Steps require - checkout code, run CxFlow Action, push issues to github
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -47,4 +45,6 @@ jobs:
         params: --namespace=${{ github.repository_owner }} 
                 --repo-name=${{ github.event.repository.name }} 
                  --branch=${{ github.ref }}
-                 --checkmarx.version=${{ cx_sast_version }}
+                 --checkmarx.version=$cx_sast_version
+    env: 
+      cx_sast_version: 9.0
