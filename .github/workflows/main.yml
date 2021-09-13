@@ -32,3 +32,6 @@ jobs:
           base_uri: https://eu.ast.checkmarx.net 
           cx_client_id: ${{ secrets.AST_CLIENT_ID }}
           cx_client_secret: ${{ secrets.AST_CLIENT_SECRET }}
+        # Additional CLI parameters
+          additional_params: --sast-preset-name "Checkmarx Express"
+                             --scan-types sast
